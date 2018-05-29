@@ -452,7 +452,7 @@ function quickSort(arr) {
 
 **算法分析**：
 
-> 基于堆排序算法，构建最大堆。时间复杂度为O(nlogk) = O（k+（n-k）* logk）=O（n * logk）
+> 基于堆排序算法，构建最大堆。时间复杂度为O(nlogk) = O（k+（n-k）* logk）=O（n * logk）;
 > 如果用快速排序，时间复杂度为O(nlogn)；
 > 如果用冒泡排序，时间复杂度为O(n*k)
 
