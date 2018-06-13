@@ -208,9 +208,8 @@ binaryInsertSort(2,3,1,9,8,1)
 **步骤**： 
 
 > * 先取一个正整数 d1(初始步长一般为`d1=arr.length/2`), 将步长为 d1 以及 d1 的倍数的数组项看成一组，然后对其进行直接插入排序；
-* 然后取 d2 为 d1/2 ；重复上述步骤；
-* 直到取 di = 1, 即所有数组项为一组， 进行直接插入排序，此时相当于在对几乎已经排好序的数据进行直接插入排序。
-
+> * 然后取 d2 为 d1/2 ；重复上述步骤；
+> * 直到取 di = 1, 即所有数组项为一组， 进行直接插入排序，此时相当于在对几乎已经排好序的数据进行直接插入排序。
 
 ```
 function shellSort(arr) {
@@ -278,7 +277,9 @@ function shellSort(arr) {
 > * Left(i) = 2i    // i的左子节点的下标
 > * Right(i) = 2i + 1  // i的右子节点的下标
 
-* 二叉堆一般分为两种：最大堆和最小堆。
+
+
+二叉堆一般分为两种：最大堆和最小堆。
 
 最大堆: 
 * 最大堆中的最大元素值出现在根结点（堆顶）;
@@ -448,11 +449,11 @@ function quickSort(arr) {
 
 ## 应用
 
-1. 输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。
+1.  输入n个整数，找出其中最小的K个数。例如输入4,5,1,6,2,7,3,8这8个数字，则最小的4个数字是1,2,3,4。
 
 **算法分析**：
 
-> 基于堆排序算法，构建最大堆。时间复杂度为O(nlogk) = O（k+（n-k）* logk）=O（n * logk);;
+> 基于堆排序算法，构建最大堆。时间复杂度为O(nlogk) = O（k+（n-k）* logk）=O（n * logk);
 > 如果用快速排序，时间复杂度为O(nlogn)；
 > 如果用冒泡排序，时间复杂度为O(n*k)
 
@@ -586,10 +587,18 @@ function GetLeastNumbers_Solution(arr, k) {
 红黑树
 
 2. 对于一个无序数组，数组中元素为互不相同的整数，请返回其中最小的k个数，顺序与原数组中元素顺序一致。
-给定一个整数数组A及它的大小n，同时给定k，请返回其中最小的k个数。
 
-[寻找最小的k个数](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/02.01.html	)
+3. 给定一个整数数组A及它的大小n，同时给定k，请返回其中最小的k个数。
 
+  
+
+  
+
+  
+
+## 参考文章
+
+* 寻找最小的k个数](https://wizardforcel.gitbooks.io/the-art-of-programming-by-july/content/02.01.html	)
 
 ## 有关数组的方法
 
@@ -615,6 +624,18 @@ function GetLeastNumbers_Solution(arr, k) {
 
 `Object.prototype.toString.call(array)`返回字符串`"[object Array]"`
 
+2. `Array.prototype.unshift()`
+
+将一个或多个元素添加到数组的开头，并返回新数组的长度。*原数组会被修改*。
+
+【参数】：
+
+为要添加到数组开头的元素。
+
+`[3,4,2].unshift("")` //4
+
+
+
 ## 对于循环遍历的几种方式（哪些可以break中断跳出循环）
 
 
@@ -628,7 +649,7 @@ function charSort(str){
   obj.has(item)? obj.set(item, obj.get(item)+1) : obj.set(item,1);
  })
 
- 
+
  Array.from(obj.keys()).forEach(item=>{
   let tempArr = new Array(obj.get(item));
   tempArr.fill(item)
